@@ -7,7 +7,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// File upload max size
+// File upload max size, these settings will take affect on all APIs
+// https://github.com/dotnet/aspnetcore/issues/20369#issuecomment-607057822
 builder.Services.Configure<Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions>(options =>
 {
    options.Limits.MaxRequestBodySize = 1_000_000; // if don't set default value is: 30 MB
